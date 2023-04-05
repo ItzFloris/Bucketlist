@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -27,7 +28,10 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $items = $request;
+        Item::create( $request->except('_token'));
+
+        return redirect("/");
     }
 
     /**
@@ -35,7 +39,7 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('items.show')->with('item', Item::find($id));
     }
 
     /**
