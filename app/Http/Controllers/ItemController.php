@@ -47,7 +47,7 @@ class ItemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('items.edit')->with('item', Item::find($id));
     }
 
     /**
@@ -55,7 +55,10 @@ class ItemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $item = Item::find($id);
+        $item->update($request->except('_token'));
+
+        return redirect("/");
     }
 
     /**
@@ -63,6 +66,9 @@ class ItemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $item = Item::find($id);
+        $item->delete();
+
+        return redirect("/");
     }
 }

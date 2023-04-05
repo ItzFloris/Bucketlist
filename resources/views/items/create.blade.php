@@ -12,7 +12,7 @@
 <body class="form">
 <div class="form__title">
     <h1>CREATE <span>BUCKETLIST</span> ITEM</h1>
-    <a href="{{ redirect("/") }}"><i class="fa-solid fa-x   fa-xl" style="color: #000000;"></i></a>
+    <a href="/"><i class="fa-solid fa-x fa-xl" style="color: #000000;"></i></a>
 </div>
 
 <form method="post" action="{{ route('items.store') }}">

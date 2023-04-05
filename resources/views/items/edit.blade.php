@@ -12,18 +12,19 @@
 <body class="form">
 <div class="form__title">
     <h1>CREATE <span>BUCKETLIST</span> ITEM</h1>
-    <a href="{{ redirect("/") }}"><i class="fa-solid fa-x   fa-xl" style="color: #000000;"></i></a>
+    <a href="/"><i class="fa-solid fa-x   fa-xl" style="color: #000000;"></i></a>
 </div>
 
-<form method="post" action="{{ route('items.store') }}">
+<form method="post" action="{{ route('items.update', $item->id) }}">
+    @method('PUT')
     @csrf
     <label>
         Titel van je bucketlist item
-        <input name="name" type="text">
+        <input name="name" type="text" value="{{ $item->name }}">
     </label>
     <label>
         Beschrijving van je bucketlist item
-        <textarea name="description"></textarea>
+        <textarea name="description" >{{ $item->description }}</textarea>
     </label>
 
     <input type="submit" value="Submit">

@@ -18,7 +18,6 @@
     @foreach ($items as $item)
         <li>
             <a href="{{ route('items.show', $item->id) }}">
-
                 {{ $item->name }}
             </a>
         </li>
