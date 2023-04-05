@@ -1,0 +1,20 @@
+ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-inline-start: 0;
+    gap: 5px;
+
+    li {
+        list-style: none;
+        padding: 1rem;
+        border: 1px solid black;
+
+        a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
